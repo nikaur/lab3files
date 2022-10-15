@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.*;
 
 interface StringChecker { boolean checkString(String s); }; 
 
@@ -41,7 +43,10 @@ class ListExamples {
       result.add(list2.get(index2));
       index1 += 1;
     }
-    return result;
+    
+    //now to make it alphabetized -- imported java.util to do this
+    List<String> finalAns = result.stream().sorted().collect(Collectors.toList());
+    return finalAns;  
   }
 
 
